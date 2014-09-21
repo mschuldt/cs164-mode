@@ -35,6 +35,10 @@
     st))
 
 (defvar cs164-mode-map (make-sparse-keymap))
+(define-key cs164-mode-map "}" (lambda ()
+                                 (interactive)
+                                 (insert "}")
+                                 (indent-for-tab-command)))
 
 (define-derived-mode cs164-mode javascript-mode
   "cs164-mode"
