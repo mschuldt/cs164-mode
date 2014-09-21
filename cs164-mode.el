@@ -34,6 +34,8 @@
     (modify-syntax-entry ?\n ">" st)
     st))
 
+(defvar cs164-mode-map (make-sparse-keymap))
+
 (define-derived-mode cs164-mode javascript-mode
   "cs164-mode"
   "Major mode to edit cs164"
@@ -42,6 +44,7 @@
   ;; (setq cs164-type-regexp nil)
   (setq cs164-keywords-variables nil)
   (set-syntax-table cs164-mode-syntax-table)
+  (use-local-map cs164-mode-map)
   (set (make-local-variable 'comment-start) "# ")
   (set (make-local-variable 'comment-end) "")
                                         ; (setq c-basic-offset 4)
